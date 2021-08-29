@@ -1,18 +1,46 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
+            <div class="card">
                 <img class="card-img-top" src="https://avatars.githubusercontent.com/u/70540294?v=4" alt="My Image">
                 <div class="card-body text-center">
-                  <p class="card-text">Name:</p>
-                  <p>Username:</p>
-                  <p>Joined on:</p>
+                  <p class="card-text">Name:<span>{{user.name}}</span></p>
+                  <p>Username:<span>{{user.login}}</span></p>
+                  <p>Joined on:<span>{{user.created_at}}</span></p>
                   <div class="follow">
-                    <p><i class="fas fa-user"></i>Followers</p>
-                    <p><i class="fas fa-user"></i>Following</p>
+                    <p><i class="fas fa-user"></i><span>{{user.followers}}</span>Followers</p>
+                    <p><i class="fas fa-user"></i><span>{{user.following}}</span>Following</p>
                   </div>
                 </div>
               </div>
         </div>
+        <div class="col-md-8">
+          <div class="card">
+            <ul class="list-group list-group-flush my-details">
+              <li class="list-group-item">Name: <span>{{user.name}}</span></li>
+              <li class="list-group-item">Address: <span>{{user.location}}</span></li>
+              <li class="list-group-item">Public repos: <span class="badge rounded-pill bg-warning text-dark">{{user.public_repos}}</span></li>
+            </ul>
+          </div>
+          <div class="card">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">About me</li>
+              <li class="list-group-item">
+                <p>{{user.bio}}</p>
+              </li>
+            </ul>
+          </div>
+          <div class="card">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Github</li>
+              <li class="list-group-item">
+                <div>
+                  <small><a class="btn btn-sm" href="https://github.com/{{ user.login }}"
+                      target="_blank" rel="noopener noreferrer">View Github <i class="fa fa-arrow-right"></i></a></small>
+                </div>
+              </li>
+            </ul>
+          </div>            
+        </div>  
     </div>
 </div>
