@@ -1,0 +1,16 @@
+footer {
+    background-color: rgb(10, 25, 47);
+}
+
+footer ul {
+    display: flex;
+}
+
+footer ul li {
+    list-style-type: none;
+    margin: 20px;
+}
+
+footer ul li a {
+    color: #FFFFFF;
+}
