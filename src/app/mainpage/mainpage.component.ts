@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RepositoryUserService } from '../repository-user.service';
 import { User } from '../user';
 
 @Component({
@@ -9,9 +10,25 @@ import { User } from '../user';
 export class MainpageComponent implements OnInit {
 
   user!: User;
-  constructor() { }
+  repositories: any;
+  getUserRepositories: any;
+  constructor(private repositoryUserService: RepositoryUserService) { }
 
   ngOnInit(): void {
+    //this.getUserDetails('MaureenNjihia');
+    this.getUserRepositories('MaureenNjihia');
   }
+
+  /*user details
+  getUserDetails(githubUserDetails: string) {
+    this.repositoryUserService.getUserResponse(githubUserDetails).then(
+      (response: any) => {
+        this.user = this.repositoryUserService.getUserDetails;
+      },
+      (error: any) => {
+        console.log(error);
+      }
+    ); // end of getUserRequest
+  }*/
 
 }

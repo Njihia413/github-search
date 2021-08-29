@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-4">
             <div class="card">
-                <img class="card-img-top" src="https://avatars.githubusercontent.com/u/70540294?v=4" alt="My Image">
+                <img class="card-img-top" [src]="user.avatar_url" alt="My Image">
                 <div class="card-body text-center">
                   <p class="card-text">Name:<span>{{user.name}}</span></p>
                   <p>Username:<span>{{user.login}}</span></p>
@@ -43,4 +43,25 @@
           </div>            
         </div>  
     </div>
+</div>
+
+<div class="container repositroy">
+  <div class="col-md-12">
+    <h2>My repositories</h2>
+  </div>
+  <div class="col-md-4" *ngFor="let repository of repositories; let i=index">
+    <div class="card card-repo">
+      <span class="float-right"><i appStarRepo title="Star Repository" class="fa fa-star"></i></span>
+      <div class="card-body text-center">
+        <h5 class="card-title heading">{{repository.name}}</h5>
+        <p class="card-text">{{repository.description}}</p>
+      </div>
+      <div class="card-body text-center">
+        <p class="card-text"><strong>Created on: <span class="badge rounded-pill bg-warning text-dark">{{
+          repository.created_at}}</span></strong></p>
+          <p>{{repository.language}}</p>
+          <a href="{{repository.html_ur }}" target="_blank" class="card-link color-primary">View repository <i class="fa fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
 </div>

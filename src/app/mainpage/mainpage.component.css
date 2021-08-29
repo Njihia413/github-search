@@ -43,3 +43,9 @@
       background-color: rgb(10, 25, 47);
       color: #fff;
   }
+
+  h2 {
+      text-align: center;
+      text-transform: uppercase;
+      color: rgb(10, 25, 47);
+  }
