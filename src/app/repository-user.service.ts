@@ -8,8 +8,8 @@ import { User } from './user';
   providedIn: 'root'
 })
 export class RepositoryUserService {
-  getUserDetails!: User;
-  getRepositoryDetails!: Repository;
+  getUserDetails: User;
+  getRepositoryDetails: Repository;
 
 
   constructor(private http: HttpClient) {
@@ -48,9 +48,8 @@ export class RepositoryUserService {
       following:number,
       created_at:Date,
     }
-  }
 
-  /*let userPromise = new Promise<void>((resolve, reject) =>
+    let userPromise = new Promise<void>((resolve, reject) =>
       this.http
         .get<ApiUserResponse>(
           environment.apiUrl +
@@ -72,6 +71,19 @@ export class RepositoryUserService {
         )
     );
     return userPromise;
-  }*/
+  }
+  }
 
-}
+  
+
+  /*getRepositoryResponse(githubUserDetails: any) {
+    interface ApiRepositoryResponse {
+      name:string;
+      html_url:string;
+      description:string;
+      created_at:string;
+      language:string;
+    }
+  }
+}*/
+

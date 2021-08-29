@@ -11,15 +11,14 @@ export class MainpageComponent implements OnInit {
 
   user!: User;
   repositories: any;
-  getUserRepositories: any;
   constructor(private repositoryUserService: RepositoryUserService) { }
 
   ngOnInit(): void {
-    //this.getUserDetails('MaureenNjihia');
-    this.getUserRepositories('MaureenNjihia');
+    this.getUserDetails('MaureenNjihia');
+    //this.getUserRepositories('MaureenNjihia');
   }
 
-  /*user details
+  //user details
   getUserDetails(githubUserDetails: string) {
     this.repositoryUserService.getUserResponse(githubUserDetails).then(
       (response: any) => {
@@ -28,7 +27,20 @@ export class MainpageComponent implements OnInit {
       (error: any) => {
         console.log(error);
       }
-    ); // end of getUserRequest
+    ); 
+  }
+
+  /*user repositories
+  getUserRepositories(githubUserDetails: string) {
+    this.repositoryUserService.getRepositoryResponse(githubUserDetails).then(
+      (response: any) => {
+        this.repositories = this.repositoryUserService.getRepositoryDetails;
+        console.log(this.repositories);
+      },
+      (error: any) => {
+        console.log(error);
+      }
+    );
   }*/
 
 }

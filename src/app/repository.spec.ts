@@ -1,7 +1,16 @@
-import { Repository } from './repository';
+import { TestBed } from '@angular/core/testing';
 
-describe('Repository', () => {
-  it('should create an instance', () => {
-    expect(new Repository()).toBeTruthy();
+import { RepositoryUserService} from './repository-user.service';
+
+describe('RepositoryUserService', () => {
+  let service: RepositoryUserService;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    service = TestBed.inject(RepositoryUserService);
+  });
+
+  it('should be created', () => {
+    expect(service).toBeTruthy();
   });
 });
