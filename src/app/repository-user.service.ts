@@ -72,11 +72,8 @@ export class RepositoryUserService {
     );
     return userPromise;
   }
-  }
 
-  
-
-  /*getRepositoryResponse(githubUserDetails: any) {
+  getRepositoryResponse(githubUserDetails: any) {
     interface ApiRepositoryResponse {
       name:string;
       html_url:string;
@@ -84,6 +81,30 @@ export class RepositoryUserService {
       created_at:string;
       language:string;
     }
+
+    let UserRepositoryPromise = new Promise<void>((resolve, reject) => {
+      this.http
+        .get<ApiRepositoryResponse>(
+          environment.apiUrl +
+            '/' +
+            githubUserDetails +
+            '/repos?sort=created&direction=desc?access_token=' +
+            environment.apiKey
+        )
+        .toPromise()
+        .then(
+          (response) => {
+            this.getRepositoryDetails = response;
+            resolve();
+          },
+          (error) => {
+            reject(error);
+            console.log(error);
+          }
+        );
+    });
+    return UserRepositoryPromise;
   }
-}*/
+  }
+
 

@@ -15,32 +15,31 @@ export class MainpageComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUserDetails('MaureenNjihia');
-    //this.getUserRepositories('MaureenNjihia');
+    this.getUserRepositories('MaureenNjihia');
   }
 
   //user details
   getUserDetails(githubUserDetails: string) {
     this.repositoryUserService.getUserResponse(githubUserDetails).then(
-      (response: any) => {
+      (response) => {
         this.user = this.repositoryUserService.getUserDetails;
       },
-      (error: any) => {
+      (error) => {
         console.log(error);
       }
     ); 
   }
 
-  /*user repositories
-  getUserRepositories(githubUserDetails: string) {
+  //user repositories
+  getUserRepositories(githubUserDetails: any) {
     this.repositoryUserService.getRepositoryResponse(githubUserDetails).then(
-      (response: any) => {
+      (response) => {
         this.repositories = this.repositoryUserService.getRepositoryDetails;
         console.log(this.repositories);
       },
-      (error: any) => {
+      (error) => {
         console.log(error);
       }
     );
-  }*/
-
+  }
 }
