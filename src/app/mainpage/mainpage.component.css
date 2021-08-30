@@ -50,4 +50,20 @@
       color: rgb(10, 25, 47);
   }
 
-  
+  .card-link {
+      text-decoration: none; 
+  }
+
+  .card {
+      font-family: 'Poppins';
+      font-size: 15px;
+  }
+
+  .float-right {
+      text-align: center;
+  }
+
+  .card-repo {
+      font-family: 'Poppins';
+      font-size: 18px;
+  }
