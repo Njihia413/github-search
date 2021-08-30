@@ -8,6 +8,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { FooterComponent } from './footer/footer.component';
 import { StarRepositoryDirective } from './star-repository.directive';
+import { UserSearchComponent } from './user-search/user-search.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,11 +19,13 @@ import { StarRepositoryDirective } from './star-repository.directive';
     MainpageComponent,
     FooterComponent,
     StarRepositoryDirective,
+    UserSearchComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

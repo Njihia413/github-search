@@ -60,11 +60,11 @@ export class RepositoryUserService {
         )
         .toPromise()
         .then(
-          (response: any) => {
+          (response) => {
             this.getUserDetails = response;
             resolve();
           },
-          (error: any) => {
+          (error) => {
             reject(error);
             console.log(error);
           }
