@@ -11,6 +11,7 @@ import { StarRepositoryDirective } from './star-repository.directive';
 import { UserSearchComponent } from './user-search/user-search.component';
 import { FormsModule } from '@angular/forms';
 import { RepositorySearchComponent } from './repository-search/repository-search.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { RepositorySearchComponent } from './repository-search/repository-search
     StarRepositoryDirective,
     UserSearchComponent,
     RepositorySearchComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
