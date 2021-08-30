@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { FooterComponent } from './footer/footer.component';
+import { StarRepositoryDirective } from './star-repository.directive';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { FooterComponent } from './footer/footer.component';
     NavBarComponent,
     MainpageComponent,
     FooterComponent,
+    StarRepositoryDirective,
   ],
   imports: [
     BrowserModule,
