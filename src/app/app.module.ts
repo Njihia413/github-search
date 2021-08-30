@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { StarRepositoryDirective } from './star-repository.directive';
 import { UserSearchComponent } from './user-search/user-search.component';
 import { FormsModule } from '@angular/forms';
+import { RepositorySearchComponent } from './repository-search/repository-search.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     StarRepositoryDirective,
     UserSearchComponent,
+    RepositorySearchComponent,
   ],
   imports: [
     BrowserModule,

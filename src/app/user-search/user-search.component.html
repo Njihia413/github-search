@@ -62,4 +62,12 @@
         </div>  
     </div>
 
+    <!--error message if github user is not found-->
+    <div class="row" *ngIf="!displayUserDetailContainer && displayGithubUserErrorNotFound">
+        <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
+        <div class="card">
+            <div class="alert alert-danger" role="alert">No Github user found</div>
+        </div>
+    </div>
 </div>
