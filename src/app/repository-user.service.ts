@@ -79,7 +79,7 @@ export class RepositoryUserService {
       name:string;
       html_url:string;
       description:string;
-      created_at:string;
+      created_at:Date;
       language:string;
     }
 
@@ -89,13 +89,13 @@ export class RepositoryUserService {
           environment.apiUrl +
             '/' +
             githubUsername +
-            '/repos?sort=created&direction=desc?access_token=' +
+            '/repos?sort=created&direction=asc?access_token=' +
             environment.apiKey
         )
         .toPromise()
         .then(
           (response) => {
-            //this.getRepositoryDetails = response;
+            this.getRepositoryDetails = response;
             resolve();
           },
           (error) => {

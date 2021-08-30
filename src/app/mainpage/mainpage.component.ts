@@ -30,15 +30,16 @@ export class MainpageComponent implements OnInit {
     ); 
   }
 
+
   //user repositories
   getUserRepositories(githubUsername: string) {
     this.repositoryUserService.getRepositoryResponse(githubUsername).then(
-      (response:any) => {
+      (response) => {
         this.repositories = this.repositoryUserService.getRepositoryDetails;
         console.log(this.repositories);
       },
-      (error: any) => {
-        console.log(error)
+      (error) => {
+        console.log(error);
       }
     );
   }
