@@ -6,7 +6,7 @@
                 <div class="card-body text-center">
                   <p class="card-text">Name:<span> {{user?.name}}</span></p>
                   <p>Username:<span> {{user?.login}}</span></p>
-                  <p>Joined on:<span> {{user?.created_at}}</span></p>
+                  <p>Joined on: <span class="badge rounded-pill bg-warning text-dark">{{user?.created_at|date}}</span></p>
                   <div class="follow">
                     <p><i class="fas fa-user"></i><span>{{user?.followers}}</span> Followers</p>
                     <p><i class="fas fa-user"></i><span>{{user?.following}}</span> Following</p>
@@ -58,7 +58,7 @@
       </div>
       <div class="card-body text-center">
         <p class="card-text"><strong>Created on: <span class="badge rounded-pill bg-warning text-dark">{{
-          repository.created_at}}</span></strong></p>
+          repository.created_at|date}}</span></strong></p>
           <p>{{repository.language}}</p>
           <a href="{{repository.html_url }}" target="_blank" class="card-link color-primary">View repository <i class="fa fa-arrow-right"></i></a>
       </div>
