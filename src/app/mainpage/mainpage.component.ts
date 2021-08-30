@@ -14,13 +14,13 @@ export class MainpageComponent implements OnInit {
   constructor(private repositoryUserService: RepositoryUserService) { }
 
   ngOnInit(): void {
-    this.getUserDetails('MaureenNjihia');
-    this.getUserRepositories('MaureenNjihia');
+    this.getUserDetails('Njihia413');
+    this.getUserRepositories('Njihia413');
   }
 
   //user details
-  getUserDetails(githubUserDetails: string) {
-    this.repositoryUserService.getUserResponse(githubUserDetails).then(
+  getUserDetails(githubUsername: string) {
+    this.repositoryUserService.getUserResponse(githubUsername).then(
       (response) => {
         this.user = this.repositoryUserService.getUserDetails;
       },
@@ -31,14 +31,14 @@ export class MainpageComponent implements OnInit {
   }
 
   //user repositories
-  getUserRepositories(githubUserDetails: any) {
-    this.repositoryUserService.getRepositoryResponse(githubUserDetails).then(
-      (response) => {
+  getUserRepositories(githubUsername: string) {
+    this.repositoryUserService.getRepositoryResponse(githubUsername).then(
+      (response:any) => {
         this.repositories = this.repositoryUserService.getRepositoryDetails;
         console.log(this.repositories);
       },
-      (error) => {
-        console.log(error);
+      (error: any) => {
+        console.log(error)
       }
     );
   }

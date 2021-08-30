@@ -1,20 +1,20 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-5">
             <div class="card">
                 <img class="card-img-top" [src]="user.avatar_url" alt="My Image">
                 <div class="card-body text-center">
-                  <p class="card-text">Name:<span>{{user.name}}</span></p>
-                  <p>Username:<span>{{user.login}}</span></p>
-                  <p>Joined on:<span>{{user.created_at}}</span></p>
+                  <p class="card-text">Name:<span> {{user.name}}</span></p>
+                  <p>Username:<span> {{user.login}}</span></p>
+                  <p>Joined on:<span> {{user.created_at}}</span></p>
                   <div class="follow">
-                    <p><i class="fas fa-user"></i><span>{{user.followers}}</span>Followers</p>
-                    <p><i class="fas fa-user"></i><span>{{user.following}}</span>Following</p>
+                    <p><i class="fas fa-user"></i><span>{{user.followers}}</span> Followers</p>
+                    <p><i class="fas fa-user"></i><span>{{user.following}}</span> Following</p>
                   </div>
                 </div>
               </div>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-7">
           <div class="card">
             <ul class="list-group list-group-flush my-details">
               <li class="list-group-item">Name: <span>{{user.name}}</span></li>

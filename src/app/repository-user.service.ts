@@ -35,7 +35,7 @@ export class RepositoryUserService {
   }
 
   //getting user details from api
-  getUserResponse(githubUserDetails: any) {
+  getUserResponse(githubUsername: string) {
     interface ApiUserResponse {
       name:string,
       login:string,
@@ -54,7 +54,7 @@ export class RepositoryUserService {
         .get<ApiUserResponse>(
           environment.apiUrl +
             '/' +
-            githubUserDetails +
+            githubUsername  +
             '?access_token=' +
             environment.apiKey
         )
@@ -73,7 +73,8 @@ export class RepositoryUserService {
     return userPromise;
   }
 
-  getRepositoryResponse(githubUserDetails: any) {
+  //getting repository details
+  getRepositoryResponse(githubUsername: string) {
     interface ApiRepositoryResponse {
       name:string;
       html_url:string;
@@ -82,19 +83,19 @@ export class RepositoryUserService {
       language:string;
     }
 
-    let UserRepositoryPromise = new Promise<void>((resolve, reject) => {
+    let repositoryPromise = new Promise<void>((resolve, reject) => {
       this.http
         .get<ApiRepositoryResponse>(
           environment.apiUrl +
             '/' +
-            githubUserDetails +
+            githubUsername +
             '/repos?sort=created&direction=desc?access_token=' +
             environment.apiKey
         )
         .toPromise()
         .then(
           (response) => {
-            this.getRepositoryDetails = response;
+            //this.getRepositoryDetails = response;
             resolve();
           },
           (error) => {
@@ -103,8 +104,9 @@ export class RepositoryUserService {
           }
         );
     });
-    return UserRepositoryPromise;
+    return repositoryPromise;
   }
-  }
+}
+
 
 
